@@ -85,7 +85,7 @@ markdown = html2markdown(
 
 ## License
 
-HTML2Markdown is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Reedy is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
