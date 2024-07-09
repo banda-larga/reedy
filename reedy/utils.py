@@ -299,12 +299,19 @@ def meme(
             text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
         return text
 
+    soup = BeautifulSoup(html, "html.parser")
+
     if emphasis:
         html = apply_conversions(html, "emphasis")
     if links:
         html = apply_conversions(html, "links")
     if images:
         html = apply_conversions(html, "images")
+
+    if nav := soup.find("nav"):
+        nav_list = [f"<li>{a.text}</li>" for a in nav.find_all("a")]
+        nav_str = "<ul>" + "".join(nav_list) + "</ul>"
+        html = re.sub(r"<nav>.*?</nav>", nav_str, html, flags=re.DOTALL)
 
     return html.strip()
 
