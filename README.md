@@ -1,6 +1,6 @@
 # Reedy
 
-Reedy is a Python package that provides an easy and efficient way to convert HTML content to Markdown format for RAG/Scraping/Data Extraction purposes.
+Reedy is a simple Python package that provides an easy and efficient way to convert HTML to Markdown for RAG/Scraping/Data Extraction purposes.
 
 ## Features
 
@@ -85,7 +85,7 @@ markdown = html2markdown(
 
 ## License
 
-HTML2Markdown is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Reedy is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
