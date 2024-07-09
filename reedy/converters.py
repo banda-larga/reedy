@@ -21,6 +21,7 @@ class URLFetchError(Exception):
 
 def html2markdown(
     content_html: str,
+    include_metadata: bool = False,
     links: bool = False,
     images: bool = False,
     emphasis: bool = True,
@@ -32,9 +33,11 @@ def html2markdown(
             meme(content_html, links=links, images=images, emphasis=emphasis)
         )
 
-        metadata = extract_metadata(content_html)
-        metadata = metadata.as_dict() if metadata else {}
-        metadata = format_metadata(metadata, separator=separator)
+        metadata = ""
+        if include_metadata:
+            metadata = extract_metadata(content_html)
+            metadata = metadata.as_dict() if metadata else {}
+            metadata = format_metadata(metadata, separator=separator)
 
         xml = extract(content, output_format="xml")
         html = tei_to_html(xml) if xml else content
@@ -53,6 +56,7 @@ def html2markdown(
 
 def url2markdown(
     url: str,
+    include_metadata: bool = False,
     links: bool = False,
     images: bool = False,
     emphasis: bool = True,
@@ -67,6 +71,7 @@ def url2markdown(
         return html2markdown(
             html,
             links=links,
+            include_metadata=include_metadata,
             images=images,
             emphasis=emphasis,
             clean=clean,
