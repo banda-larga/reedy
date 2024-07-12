@@ -30,7 +30,7 @@ pip install -e .
 from reedy import url2markdown, html2markdown
 
 # here we use url2markdown
-markdown = url2markdown("https://lilianweng.github.io/posts/2024-07-07-hallucination/")
+markdown = url2markdown("https://lilianweng.github.io/posts/2024-07-07-hallucination/", include_metadata=True)
 print(markdown)
 ```
 
