@@ -11,17 +11,10 @@ Reedy is a simple Python package that provides an easy and efficient way to conv
 
 ## Installation
 
-Clone the repository:
-
-```
-git clone https://github.com/banda-larga/reedy.git
-cd reedy
-```
-
 You can install Reedy using pip:
 
 ```
-pip install -e .
+pip install -U git+https://github.com/banda-larga/reedy.git
 ```
 
 ### Converting URL content to Markdown
