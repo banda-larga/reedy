@@ -1,26 +1,30 @@
-# Reedy
+# Reedy 📚
 
-Reedy is a simple Python package that provides an easy and efficient way to convert HTML to Markdown for RAG/Scraping/Data Extraction purposes.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+Reedy is a lightweight Python package that simplifies HTML to Markdown conversion for RAG (Retrieval-Augmented Generation), web scraping, and data extraction tasks.
 
-- HTML to Markdown
-- Customizable options for handling links and images
-- Preserves code and formatting
-- Handles metadata extraction
+## 🚀 Features
 
-## Installation
+- 🔄 Effortless HTML to Markdown conversion
+- 🔗 Customizable handling of links, images, formatting
+- 🖋️ Preserves code blocks and text formatting
+- 📊 Extracts and includes metadata
 
-You can install Reedy using pip:
+## 📦 Installation
 
-```
+Install Reedy using pip:
+
+```bash
 pip install -U git+https://github.com/banda-larga/reedy.git
 ```
+
+## 🔧 Usage
 
 ### Converting URL content to Markdown
 
 ```python
-from reedy import url2markdown, html2markdown
+from reedy import url2markdown
 
 # here we use url2markdown
 markdown = url2markdown("https://lilianweng.github.io/posts/2024-07-07-hallucination/", include_metadata=True)
@@ -54,32 +58,55 @@ This post focuses on extrinsic hallucination. To avoid hallucination, LLMs need 
 
 This will fetch the content from the specified URL, convert it to Markdown, and include links and images in the output.
 
-### Customization Options
+### Converting HTML to Markdown
 
-The `html2markdown` and `url2markdown` functions accept the following options:
+```python
+from reedy import html2markdown
 
-- `links` (bool): If True, preserve and convert HTML links to Markdown format.
-- `images` (bool): If True, preserve and convert HTML images to Markdown format.
-- `emphasis` (bool): If True, preserve and convert HTML emphasis tags to Markdown format.
-- `clean` (bool): If True, clean up the Markdown output.
-- `separator` (str): The separator to use between metadata and content. Default is `---`.
+html_content = """
+<h1>Hello, Reedy!</h1>
+<p>This is a <strong>sample</strong> HTML content.</p>
+"""
+
+markdown = html2markdown(html_content)
+print(markdown)
+```
+
+## ⚙️ Customization Options
+
+Both `html2markdown` and `url2markdown` functions accept the following parameters:
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `include_metadata` | bool | `False` | Include metadata in the output |
+| `links` | bool | `False` | Preserve and convert HTML links |
+| `images` | bool | `False` | Preserve and convert HTML images |
+| `emphasis` | bool | `True` | Preserve and convert emphasis tags |
+| `clean` | bool | `True` | Clean up the Markdown output |
+| `separator` | str | `"---"` | Separator between metadata and content |
 
 Example:
+
 ```python
 markdown = html2markdown(
     html_content,
+    include_metadata=True,
     links=True,
-    images=False,
-    emphasis=False,
+    images=True,
+    emphasis=True,
     clean=True,
     separator="~~~~~~~"
 )
 ```
 
-## License
+## 🤝 Contributing
 
-Reedy is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Acknowledgements
+## 📄 License
 
-This package is heavily based on [Trafilatura](https://github.com/adbar/trafilatura). I would like to thank the author.
+Reedy is open-source software licensed under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgements
+
+This package is heavily inspired by [Trafilatura](https://github.com/adbar/trafilatura). We extend our gratitude to its authors and contributors.
