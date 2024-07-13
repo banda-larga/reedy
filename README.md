@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Reedy is a lightweight Python package that simplifies HTML to Markdown conversion for RAG (Retrieval-Augmented Generation), web scraping, and data extraction tasks.
+Reedy is a lightweight Python package that simplifies HTML to Markdown conversion for RAG, web scraping, and data extraction tasks.
 
 ## 🚀 Features
 
@@ -109,4 +109,4 @@ Reedy is open-source software licensed under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgements
 
-This package is heavily inspired by [Trafilatura](https://github.com/adbar/trafilatura). We extend our gratitude to its authors and contributors.
+This package is heavily based on [Trafilatura](https://github.com/adbar/trafilatura). We extend our gratitude to its authors and contributors.
